@@ -1,13 +1,13 @@
 
 var canvas = document.getElementById('cnv');
 var gl = canvas.getContext('2d');
-var boids = [];
+var boids = [{x:20, y:20, vx:0.5, vy:0.5, w:10}];
 var numBoids = 1;
 var repulsion = 1;
 var repulseRadius = 1;
 var alignment = 0.0001;
 var alignRadius = 3;
-var attraction = 0.0001;
+var attraction = 0.0004;
 var attractRadius = 8;
 const BOID_WIDTH = 5;
 const MAX_SPEED = 3;
@@ -172,5 +172,5 @@ function update()
     gl.beginPath();
     gl.strokeStyle = 'black';
     gl.strokeRect(1, 1, canvas.width - 2, canvas.height - 2);
-    gl.endPath();
+    gl.closePath();
 }
